@@ -27,4 +27,6 @@ app.put('/players/edit', (req, res) => {
     console.log('Edited')
 })
 
+app.get('/players', (req, res) => {
+
 })
