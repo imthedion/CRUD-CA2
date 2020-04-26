@@ -8,4 +8,15 @@ app.listen(3000, function() {
   console.log('listening on 3000')
 })
 
+app.post('/quotes', (req, res) => {
+    // CREATE
+
+    const name = req.body.name;
+    const position = req.body.position;
+
+    // TODO: Insert to MongoDB
+    // mongoDB.insert(name, position)
+    res.send(players)
+})
+
 })
