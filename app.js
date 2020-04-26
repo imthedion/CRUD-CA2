@@ -29,4 +29,7 @@ app.put('/players/edit', (req, res) => {
 
 app.get('/players', (req, res) => {
 
+
+    const players = [
+
 })
