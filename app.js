@@ -19,4 +19,8 @@ app.post('/quotes', (req, res) => {
     res.send(players)
 })
 
+app.delete('/players/delete', (req, res) => {
+    console.log('Deleted...')
+})
+
 })
