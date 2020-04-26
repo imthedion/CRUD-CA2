@@ -30,7 +30,12 @@ app.put('/players/edit', (req, res) => {
 app.get('/players', (req, res) => {
 
  const players = [
-
+        'Lebron James',
+        'Kobe Bryant',
+        'Michael Jordan',
+        'Stephen Curry',
+        'Carmelo Anthony',
+        'Damian Lillard'
     ]
     res.send(players)
 })
