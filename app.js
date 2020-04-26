@@ -23,4 +23,8 @@ app.delete('/players/delete', (req, res) => {
     console.log('Deleted...')
 })
 
+app.put('/players/edit', (req, res) => {
+    console.log('Edited')
+})
+
 })
