@@ -3,12 +3,15 @@ const express = require('express');                     //builds APIs, HTML, CSS
 const bodyParser = require('body-parser');              //returns middleware that only parsers JSON
 const http = require('http');                           //HTTP functions
 const app = express();                                  //take care by Express
+const mongoose = require('mongoose');                            
 
-app.use(bodyParser.urlencoded({  extended: true  }))
+app.use(bodyParser.urlencoded({  extended: true  }));
 
-app.listen(3000, function() {                           //uses the port 3000
-  console.log('listening on 3000')                      //prints out listening on 3000
-})
+ //uses the port 3000
+app.listen(3000, function() {     
+//prints out listening on 3000  
+  console.log('listening on 3000')                      
+});
 
 //creates read-only variable
 app.post('/quotes', (req, res) => {
@@ -20,7 +23,7 @@ app.post('/quotes', (req, res) => {
     // TODO: Insert to MongoDB
     // mongoDB.insert(name, position)
     res.send(players)
-})
+});
 
 app.get('/players', (req, res) => {
     // READ
@@ -37,19 +40,28 @@ app.get('/players', (req, res) => {
         'Damian Lillard'
     ]
     res.send(players)
-})
+});
 
 app.put('/players/edit', (req, res) => {
     // UPDATE
     console.log('Edited')
-})
+});
 
 app.delete('/players/delete', (req, res) => {
     // DELETE
     console.log('Deleted...')
-})
+});
 
 //reads HTML file
 app.get('/', function(req, res) {
     res.sendFile(__dirname + '/indexx.html')
-})
+});
+
+// mongoose.connect('mongodb://localhost/test');
+// mongoose.connection.on('error', (err) => { 
+//     console.log('Mongodb Error: ', err); 
+//     process.exit();
+// });
+// mongoose.connection.on('connected', () => { 
+//     console.log('MongoDB is successfully connected');
+// });
