@@ -57,7 +57,7 @@ app.get('/', function(req, res) {
     res.sendFile(__dirname + '/indexx.html')
 });
 
-// mongoose.connect('mongodb://localhost/test');
+// mongoose.connect('mongodb+srv://user1:userpassword@cluster0-yflu3.mongodb.net/test?retryWrites=true&w=majority');
 // mongoose.connection.on('error', (err) => { 
 //     console.log('Mongodb Error: ', err); 
 //     process.exit();
