@@ -1,13 +1,16 @@
-const express = require('express');
-const bodyParser = require('body-parser')
-const app = express();
+//installed packages
+const express = require('express');                     //builds APIs, HTML, CSS, JavaScript
+const bodyParser = require('body-parser');              //returns middleware that only parsers JSON
+const http = require('http');                           //HTTP functions
+const app = express();                                  //take care by Express
 
 app.use(bodyParser.urlencoded({  extended: true  }))
 
-app.listen(3000, function() {
-  console.log('listening on 3000')
+app.listen(3000, function() {                           //uses the port 3000
+  console.log('listening on 3000')                      //prints out listening on 3000
 })
 
+//creates read-only variable
 app.post('/quotes', (req, res) => {
     // CREATE
 
@@ -19,18 +22,12 @@ app.post('/quotes', (req, res) => {
     res.send(players)
 })
 
-app.delete('/players/delete', (req, res) => {
-    console.log('Deleted...')
-})
-
-app.put('/players/edit', (req, res) => {
-    console.log('Edited')
-})
-
 app.get('/players', (req, res) => {
     // READ
     // TODO: Query MongoDB for the list of players
     // mongoDB.getPlayers()
+
+    //list of players
  const players = [
         'Lebron James',
         'Kobe Bryant',
@@ -42,6 +39,17 @@ app.get('/players', (req, res) => {
     res.send(players)
 })
 
+app.put('/players/edit', (req, res) => {
+    // UPDATE
+    console.log('Edited')
+})
+
+app.delete('/players/delete', (req, res) => {
+    // DELETE
+    console.log('Deleted...')
+})
+
+//reads HTML file
 app.get('/', function(req, res) {
     res.sendFile(__dirname + '/indexx.html')
 })
