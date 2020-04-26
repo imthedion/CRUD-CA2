@@ -28,7 +28,9 @@ app.put('/players/edit', (req, res) => {
 })
 
 app.get('/players', (req, res) => {
-
+    // READ
+    // TODO: Query MongoDB for the list of players
+    // mongoDB.getPlayers()
  const players = [
         'Lebron James',
         'Kobe Bryant',
