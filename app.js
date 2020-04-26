@@ -42,4 +42,6 @@ app.get('/players', (req, res) => {
     res.send(players)
 })
 
+app.get('/', function(req, res) {
+    res.sendFile(__dirname + '/indexx.html')
 })
